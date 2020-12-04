@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Edit Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/edit.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="bg-contact3" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-contact3">
+			<div class="wrap-contact3">
+				<form action="/controller/edit_controller.php" class="contact3-form validate-form" method="post">
+					<a href="https://kvizland.herokuapp.com/"><img src="images/mylogo.png"></img></a>
+					<span class="contact3-form-title">
+						Edit Page
+					</span>
+
+					<h4>Disclaimer: first you need to delete options, only than you can delete questions and quiz.</h4>
+
+					<div class="wrap-contact3-form-radio">
+						<div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio1" type="radio" name="choice" value="choice1" onClick="_clickRadioButton(this);">
+							<label class="label-radio3" for="radio1">
+								Edit/Add quiz
+							</label>
+						</div>
+
+						<div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio2" type="radio" name="choice" value="choice2" onClick="_clickRadioButton(this);">
+							<label class="label-radio3" for="radio2">
+								Edit/Add quiz question
+							</label>
+						</div>
+
+						<div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio3" type="radio" name="choice" value="choice3" onClick="_clickRadioButton(this);">
+							<label class="label-radio3" for="radio3">
+								Edit/Add quiz option
+							</label>
+						</div>
+						
+						<div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio4" type="radio" name="choice" value="choice4" onClick="_clickRadioButton(this);">
+							<label class="label-radio3" for="radio4">
+								Delete quiz
+							</label>
+						</div>
+
+						<div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio5" type="radio" name="choice" value="choice5" onClick="_clickRadioButton(this);">
+							<label class="label-radio3" for="radio5">
+								Delete quiz question
+							</label>
+						</div>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate="... is required" id="id_quiz">
+						<input class="input3" type="text" name="quiz_id" placeholder="Quiz ID">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="title_quiz">
+						<input class="input3" type="text" name="quiz_title" placeholder="Quiz Title">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="about_quiz">
+						<textarea class="input3" type="text" name="quiz_about" placeholder="About Quiz"></textarea>
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="image_quiz">
+						<input class="input3" type="text" name="quiz_image" placeholder="Quiz Image Path">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="id_question">
+						<input class="input3" type="text" name="question_id" placeholder="Question ID">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="question_hehe">
+						<textarea class="input3" type="text" name="question" placeholder="Question"></textarea>
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="id_option">
+						<input class="input3" type="text" name="option_id" placeholder="Option ID">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="answer_option">
+						<input class="input3" type="text" name="option_answer" placeholder="Option">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input hide-fields" data-validate = "... is required" id="correct_is">
+						<input class="input3" type="text" name="is_correct" placeholder="Is this option correct (Type 0 or 1)">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="container-contact3-form-btn">
+						<button type="submit" class="contact3-form-btn">
+							Submit
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/edit.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
